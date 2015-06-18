@@ -13,14 +13,14 @@ class BingoBoard
   def checker
     @board.each do |sub_array|
       sub_array.map! do |num|
-        p "num: #{num}"
-        p "ball: #{@ball[1]}"
         if num == @ball[1]
           num = "X"
-          print_board
+        else
+          num
         end
       end
     end
+    print_board
   end
 
   def print_board
@@ -31,7 +31,7 @@ class BingoBoard
 
 end
 
-print board = BingoBoard.new
+board = BingoBoard.new
 5.times do
   board.ball_picker
   board.checker
