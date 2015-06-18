@@ -7,17 +7,12 @@ class BingoBoard
     @bingo = "BINGO".chars
     @num = *(1..100)
     @ball = [@bingo.sample, @num.sample]
-    p @ball
   end
 
   def checker
     @board.each do |sub_array|
       sub_array.map! do |num|
-        if num == @ball[1]
-          num = "X"
-        else
-          num
-        end
+        num == @ball[1] ? "X" : num
       end
     end
     print_board
